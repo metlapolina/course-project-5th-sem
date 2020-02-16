@@ -1,0 +1,30 @@
+﻿<Page x:Class="BankApp.pages.client.TransPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BankApp.pages.client"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="550" FontFamily="Century Gothic" FontSize="25"
+      Title="TransPage">
+
+    <StackPanel Margin="10 0 10 0">
+        <TextBlock Text="ПЕРЕВОД СРЕДСТВ" HorizontalAlignment="Center" Margin="0 40" Foreground="Coral" FontWeight="Bold"/>
+        <DockPanel Width="300" Margin="0 10 0 10">
+            <materialDesign:PackIcon Kind="Bank" Foreground="Gray"  Width="35" Height="35"/>
+            <ComboBox x:Name="cb_FromAccount" materialDesign:HintAssist.Hint="Со счета" Padding="5 0" Height="35" FontSize="16"  VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <DockPanel Width="300" Margin="0 10 0 15">
+            <materialDesign:PackIcon Kind="AccountBalanceWallet" Foreground="Gray" Padding="0" Width="35" Height="35"/>
+            <TextBox x:Name="txt_Balance" FontSize="16" materialDesign:HintAssist.Hint="Сумма" MaxLength="10" Padding="5 0" Height="35" VerticalContentAlignment="Center" />
+        </DockPanel>
+        <DockPanel Width="300" Margin="0 10 0 20">
+            <materialDesign:PackIcon Kind="Bank" Foreground="Gray"  Width="35" Height="35"/>
+            <TextBox x:Name="txt_ToAccount" materialDesign:HintAssist.Hint="На счет" Padding="5 0" Height="35" FontSize="16"  VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <Button Content="В рамках одного лица" Width="280" Height="45" FontSize="18" Foreground="White" Background="Coral" Margin="10" Click="TransYourself_Click"/>
+        <Button Content="Другому лицу" Width="280" Height="45" FontSize="18" Foreground="White" Background="Coral" Margin="10" Click="TransAnother_Click"/>
+        <Button Content="С обменом валюты" Width="280" Height="45" FontSize="18" Foreground="White" Background="Coral" Margin="10" Click="TransExchange_Click"/>
+    </StackPanel>
+</Page>
